@@ -1,0 +1,24 @@
+﻿@using System.Security.Claims
+@{
+    ViewData["Title"] = "멤버십";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    string userId = string.Empty;
+    string userRoleId = string.Empty;
+    string[] userDataInfos = new[] { string.Empty, string.Empty, string.Empty, string.Empty };
+
+    if (Context.User.Claims.Any())
+    {
+        userId = User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Name)).Value;
+        userRoleId = User.FindFirst(claim => claim.Type.Equals(ClaimTypes.Role)).Value;
+        userDataInfos = User.FindFirst(claim => claim.Type.Equals(ClaimTypes.UserData)).Value.Split("|");
+    }
+}
+
+<h1>@ViewData["Title"]</h1>
+<div class="text-info">@Html.Raw(TempData["Message"])</div>
+
+@if (Context.User.Identity.IsAuthenticated){
+    <div class="text-info">@($"{userDataInfos[2]} 님 [{userDataInfos[0]}]")</div>
+    <a asp-asp-controller="EUser" asp-action="LogOut" class ="btn btn-primary">로그아웃</a>
+}
