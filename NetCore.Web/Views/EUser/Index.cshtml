@@ -17,8 +17,14 @@
 
 <h1>@ViewData["Title"]</h1>
 <div class="text-info">@Html.Raw(TempData["Message"])</div>
+<div class="text-danger">@Html.Raw(ViewData["Message"])</div>
 
 @if (Context.User.Identity.IsAuthenticated){
     <div class="text-info">@($"{userDataInfos[2]} 님 [{userDataInfos[0]}]")</div>
     <a asp-asp-controller="EUser" asp-action="LogOut" class ="btn btn-primary">로그아웃</a>
+    <form method="post" asp-controller="EUser" asp-action="WithDrawn" onsubmit="btnWithdrawn.disabled = true; return true;">
+        <input type="hidden" name="UserId" value="@Context.User.Identity.Name" />
+        <input type="Password" name="Password" placeholder="Password" value=""/>
+        <button type="submit" name="btnWithdrawn" class="btn btn-primary">탈퇴</button>
+    </form>
 }

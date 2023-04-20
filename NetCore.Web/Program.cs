@@ -8,8 +8,15 @@ using NetCore.Services.Data;
 using NetCore.Services.interfaces;
 using NetCore.Services.Svcs;
 using NetCore.Utilities.Utils;
+using NLog.Fluent;
+using NLog.Web;
 
 var builder = WebApplication.CreateBuilder(args);
+#region 로깅 설정
+builder.Logging.ClearProviders();
+builder.Logging.SetMinimumLevel(LogLevel.Trace);
+builder.Host.UseNLog();
+#endregion
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -18,6 +25,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IUser, UserService>();
 builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<DBFirstDbinitializer>();
 #endregion
 
 #region DB 접속정보, Migrations 프로젝트 지정
@@ -48,6 +56,16 @@ builder.Services.ConfigureApplicationCookie(options =>
 });
 #endregion
 
+#region 세션 설정
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.Cookie.Name = ".NetCore.Session";
+    // 세션 제한시간
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+});
+#endregion
+
 #region 데이터 보호
 Common.SetDataProtection(builder.Services, @"C:\Users\LJG\Desktop\ERP개발\Project\DataProtector\", "NetCore", Enums.CryptoType.CngCbc);
 #endregion
@@ -62,6 +80,9 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
+
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -70,12 +91,20 @@ app.UseRouting();
 // 승인권한을 사용하기 위해 추가됨.
 app.UseAuthentication();
 app.UseAuthorization();
-//app.UseSession();
+app.UseSession();
 //app.MapControllerRoute();
 
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=EUser}/{action=Login}/{id?}");
+
+using (var scope = app.Services.CreateScope())
+{
+    DBFirstDbinitializer initializer = scope.ServiceProvider
+                                            .GetService<DBFirstDbinitializer>();
+
+    int rowAffected = initializer.PlantSeedData();
+}
 
 app.Run();

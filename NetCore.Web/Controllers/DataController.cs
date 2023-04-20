@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
 using NetCore.Data.ViewModels;
+using NetCore.Web.Extensions;
 
 namespace NetCore.Web.Controllers
 {
@@ -9,11 +10,46 @@ namespace NetCore.Web.Controllers
     public class DataController : Controller
     {
         private IDataProtector _protector;
+        private HttpContext _context;
+        private string _sessionKeyCartName = "_sessionCartKey";
 
-        public DataController(IDataProtectionProvider provider)
+        public DataController(IHttpContextAccessor accessor, IDataProtectionProvider provider)
         {
+            _context = accessor.HttpContext;
             _protector = provider.CreateProtector("NetCore.Data.v1");
         }
+
+        #region private methods
+        private List<ItemInfo> GetCartInfos(ref string message)
+        {
+            var cartInfos = _context.Session.Get<List<ItemInfo>>(key: "_sessionCartKey");
+
+            if(cartInfos == null || cartInfos.Count() < 1)
+            {
+                message = "장바구니에 담긴 상품이 없습니다.";
+            }
+            return cartInfos;
+        }
+
+        private void SetCartInfos(ItemInfo item, List<ItemInfo> cartInfos = null)
+        {
+            if(cartInfos == null)
+            {
+                cartInfos = _context.Session.Get<List<ItemInfo>>(_sessionKeyCartName);
+
+                if(cartInfos == null)
+                {
+                    cartInfos = new List<ItemInfo>();
+                }
+            }
+
+            cartInfos.Add(item);
+
+            _context.Session.Set<List<ItemInfo>>(_sessionKeyCartName, cartInfos);
+        }
+        #endregion
+
+        #region AES
         [HttpGet]
         public IActionResult AES()
         {
@@ -49,5 +85,45 @@ namespace NetCore.Web.Controllers
             ModelState.AddModelError(string.Empty, message);
             return View(aes);
         }
+        #endregion
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult AddCart()
+        {
+            SetCartInfos(new ItemInfo()
+            {
+                ItemNo = Guid.NewGuid(),
+                ItemName = DateTime.UtcNow.Ticks.ToString()
+            });
+            return RedirectToAction("Cart", "Data");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult RemoveCart()
+        {
+            string message = string.Empty;
+            var cartInfos = GetCartInfos(ref message);
+
+            if (cartInfos != null && cartInfos.Count()>0)
+            {
+                _context.Session.Remove(key:_sessionKeyCartName);
+            }
+            return RedirectToAction("Cart", "Data");
+        }
+
+        public IActionResult Cart()
+        {
+
+            string message = string.Empty;
+            var cartInfos = GetCartInfos(ref message);
+
+            ViewData["Message"] = message;
+            return View(cartInfos);
+        }
     }
+    
+
+
 }

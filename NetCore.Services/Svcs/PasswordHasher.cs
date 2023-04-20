@@ -39,13 +39,14 @@ namespace NetCore.Services.Svcs
             return Convert.ToBase64String(salt);
         }
 
+        // 아이디 소문자 처리 .ToLower()
         private string GetPasswordHash(string userId, string password, string rngSalt, string guidSalt)
         {
             // derive a 256-bit subkey (use HMACSHA1 with 10,000 iterations)
             // Pbkdf2
             // Password Based key derivation function 2
             return Convert.ToBase64String(KeyDerivation.Pbkdf2(
-                password: userId + password + guidSalt,
+                password: userId.ToLower() + password + guidSalt,
                 salt: Encoding.UTF8.GetBytes(rngSalt),
                 prf: KeyDerivationPrf.HMACSHA512,
                 iterationCount: 45000, // 10000, 25000, 45000

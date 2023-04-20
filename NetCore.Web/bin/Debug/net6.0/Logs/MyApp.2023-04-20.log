@@ -1,0 +1,537 @@
+2023-04-20 12:15:26.1212 - LEVEL=DEBUG: Initializing Razor view compiler with compiled view: '/Views/Data/AES.cshtml'.
+2023-04-20 12:15:26.1699 - LEVEL=DEBUG: Initializing Razor view compiler with compiled view: '/Views/EUser/Forbidden.cshtml'.
+2023-04-20 12:15:26.1699 - LEVEL=DEBUG: Initializing Razor view compiler with compiled view: '/Views/EUser/Index.cshtml'.
+2023-04-20 12:15:26.1699 - LEVEL=DEBUG: Initializing Razor view compiler with compiled view: '/Views/EUser/Login.cshtml'.
+2023-04-20 12:15:26.1699 - LEVEL=DEBUG: Initializing Razor view compiler with compiled view: '/Views/EUser/LoginOri.cshtml'.
+2023-04-20 12:15:26.1699 - LEVEL=DEBUG: Initializing Razor view compiler with compiled view: '/Views/EUser/Logout.cshtml'.
+2023-04-20 12:15:26.1699 - LEVEL=DEBUG: Initializing Razor view compiler with compiled view: '/Views/EUser/Register.cshtml'.
+2023-04-20 12:15:26.1699 - LEVEL=DEBUG: Initializing Razor view compiler with compiled view: '/Views/EUser/UpdateInfo.cshtml'.
+2023-04-20 12:15:26.1699 - LEVEL=DEBUG: Initializing Razor view compiler with compiled view: '/Views/Home/Index.cshtml'.
+2023-04-20 12:15:26.1699 - LEVEL=DEBUG: Initializing Razor view compiler with compiled view: '/Views/Home/Privacy.cshtml'.
+2023-04-20 12:15:26.1699 - LEVEL=DEBUG: Initializing Razor view compiler with compiled view: '/Views/Shared/Error.cshtml'.
+2023-04-20 12:15:26.1699 - LEVEL=DEBUG: Initializing Razor view compiler with compiled view: '/Views/Shared/_Layout_Login.cshtml'.
+2023-04-20 12:15:26.1699 - LEVEL=DEBUG: Initializing Razor view compiler with compiled view: '/Views/Shared/_ValidationScriptsPartial.cshtml'.
+2023-04-20 12:15:26.1699 - LEVEL=DEBUG: Initializing Razor view compiler with compiled view: '/Views/_ViewImports.cshtml'.
+2023-04-20 12:15:26.1699 - LEVEL=DEBUG: Initializing Razor view compiler with compiled view: '/Views/_ViewStart.cshtml'.
+2023-04-20 12:15:26.1699 - LEVEL=DEBUG: Initializing Razor view compiler with compiled view: '/Views/Shared/_Layout.cshtml'.
+2023-04-20 12:15:26.1822 - LEVEL=DEBUG: Registered model binder providers, in the following order: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider, Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider
+2023-04-20 12:15:26.4390 - LEVEL=DEBUG: An 'IServiceProvider' was created for internal use by Entity Framework.
+2023-04-20 12:15:27.1387 - LEVEL=DEBUG: The index {'UserId'} was not created on entity type 'UserRolesByUser' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2023-04-20 12:15:27.3615 - LEVEL=INFO: Entity Framework Core 6.0.15 initialized 'DBFirstDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NetCore.Migrations 
+2023-04-20 12:15:27.4080 - LEVEL=DEBUG: Opening connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:27.6481 - LEVEL=DEBUG: Opened connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:27.6481 - LEVEL=DEBUG: Creating DbCommand for 'ExecuteNonQuery'.
+2023-04-20 12:15:27.6611 - LEVEL=DEBUG: Created DbCommand for 'ExecuteNonQuery' (3ms).
+2023-04-20 12:15:27.6611 - LEVEL=DEBUG: Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2023-04-20 12:15:27.6923 - LEVEL=INFO: Executed DbCommand (25ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2023-04-20 12:15:27.6923 - LEVEL=DEBUG: Closing connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:27.6923 - LEVEL=DEBUG: Closed connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:27.6923 - LEVEL=DEBUG: Creating DbCommand for 'ExecuteScalar'.
+2023-04-20 12:15:27.6923 - LEVEL=DEBUG: Created DbCommand for 'ExecuteScalar' (0ms).
+2023-04-20 12:15:27.6923 - LEVEL=DEBUG: Opening connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:27.6923 - LEVEL=DEBUG: Opened connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:27.7061 - LEVEL=DEBUG: Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-04-20 12:15:27.7330 - LEVEL=INFO: Executed DbCommand (27ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-04-20 12:15:27.7330 - LEVEL=DEBUG: Closing connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:27.7330 - LEVEL=DEBUG: Closed connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:27.7884 - LEVEL=DEBUG: Compiling query expression: 
+'DbSet<User>()
+    .Any()'
+2023-04-20 12:15:27.9761 - LEVEL=DEBUG: Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<bool>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> 0
+        SELECT EXISTS (
+            SELECT 1
+            FROM User AS u)), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, bool>, 
+    NetCore.Services.Data.DBFirstDbContext, 
+    False, 
+    False, 
+    True
+)
+    .Single()'
+2023-04-20 12:15:28.0124 - LEVEL=DEBUG: Creating DbCommand for 'ExecuteReader'.
+2023-04-20 12:15:28.0124 - LEVEL=DEBUG: Created DbCommand for 'ExecuteReader' (0ms).
+2023-04-20 12:15:28.0124 - LEVEL=DEBUG: Opening connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:28.0124 - LEVEL=DEBUG: Opened connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:28.0124 - LEVEL=DEBUG: Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [User] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-04-20 12:15:28.0124 - LEVEL=INFO: Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [User] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-04-20 12:15:28.0231 - LEVEL=DEBUG: A data reader was disposed.
+2023-04-20 12:15:28.0231 - LEVEL=DEBUG: Closing connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:28.0231 - LEVEL=DEBUG: Closed connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:28.0231 - LEVEL=DEBUG: Compiling query expression: 
+'DbSet<UserRole>()
+    .Any()'
+2023-04-20 12:15:28.0231 - LEVEL=DEBUG: Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<bool>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> 0
+        SELECT EXISTS (
+            SELECT 1
+            FROM UserRole AS u)), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, bool>, 
+    NetCore.Services.Data.DBFirstDbContext, 
+    False, 
+    False, 
+    True
+)
+    .Single()'
+2023-04-20 12:15:28.0231 - LEVEL=DEBUG: Creating DbCommand for 'ExecuteReader'.
+2023-04-20 12:15:28.0231 - LEVEL=DEBUG: Created DbCommand for 'ExecuteReader' (0ms).
+2023-04-20 12:15:28.0231 - LEVEL=DEBUG: Opening connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:28.0231 - LEVEL=DEBUG: Opened connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:28.0231 - LEVEL=DEBUG: Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [UserRole] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-04-20 12:15:28.0231 - LEVEL=INFO: Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [UserRole] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-04-20 12:15:28.0231 - LEVEL=DEBUG: A data reader was disposed.
+2023-04-20 12:15:28.0231 - LEVEL=DEBUG: Closing connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:28.0231 - LEVEL=DEBUG: Closed connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:28.0231 - LEVEL=DEBUG: Compiling query expression: 
+'DbSet<UserRolesByUser>()
+    .Any()'
+2023-04-20 12:15:28.0231 - LEVEL=DEBUG: Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<bool>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> 0
+        SELECT EXISTS (
+            SELECT 1
+            FROM UserRolesByUser AS u)), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, bool>, 
+    NetCore.Services.Data.DBFirstDbContext, 
+    False, 
+    False, 
+    True
+)
+    .Single()'
+2023-04-20 12:15:28.0231 - LEVEL=DEBUG: Creating DbCommand for 'ExecuteReader'.
+2023-04-20 12:15:28.0231 - LEVEL=DEBUG: Created DbCommand for 'ExecuteReader' (0ms).
+2023-04-20 12:15:28.0231 - LEVEL=DEBUG: Opening connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:28.0231 - LEVEL=DEBUG: Opened connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:28.0231 - LEVEL=DEBUG: Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [UserRolesByUser] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-04-20 12:15:28.0231 - LEVEL=INFO: Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [UserRolesByUser] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-04-20 12:15:28.0337 - LEVEL=DEBUG: A data reader was disposed.
+2023-04-20 12:15:28.0337 - LEVEL=DEBUG: Closing connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:28.0337 - LEVEL=DEBUG: Closed connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:28.0337 - LEVEL=DEBUG: 'DBFirstDbContext' disposed.
+2023-04-20 12:15:28.0337 - LEVEL=DEBUG: Hosting starting
+2023-04-20 12:15:28.0614 - LEVEL=DEBUG: Reading data from file 'C:\Users\LJG\Desktop\ERP개발\Project\DataProtector\key-3e269c63-672c-42c3-88d6-664b49691759.xml'.
+2023-04-20 12:15:28.0614 - LEVEL=DEBUG: Reading data from file 'C:\Users\LJG\Desktop\ERP개발\Project\DataProtector\key-a94acc11-b97b-4eea-be1a-9a8673bc288e.xml'.
+2023-04-20 12:15:28.0614 - LEVEL=DEBUG: Reading data from file 'C:\Users\LJG\Desktop\ERP개발\Project\DataProtector\key-b0a6b2fc-4ef3-4463-b575-cbe3985c3f8d.xml'.
+2023-04-20 12:15:28.0679 - LEVEL=DEBUG: Found key {3e269c63-672c-42c3-88d6-664b49691759}.
+2023-04-20 12:15:28.0679 - LEVEL=DEBUG: Found key {a94acc11-b97b-4eea-be1a-9a8673bc288e}.
+2023-04-20 12:15:28.0679 - LEVEL=DEBUG: Found key {b0a6b2fc-4ef3-4463-b575-cbe3985c3f8d}.
+2023-04-20 12:15:28.0679 - LEVEL=DEBUG: Considering key {b0a6b2fc-4ef3-4463-b575-cbe3985c3f8d} with expiration date 2023-04-24 02:09:39Z as default key.
+2023-04-20 12:15:28.0679 - LEVEL=DEBUG: Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.CngCbcAuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.CngCbcAuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-04-20 12:15:28.0679 - LEVEL=DEBUG: Opening CNG algorithm 'AES' from provider '(null)' with chaining mode CBC.
+2023-04-20 12:15:28.0679 - LEVEL=DEBUG: Opening CNG algorithm 'SHA512' from provider '(null)' with HMAC.
+2023-04-20 12:15:28.0679 - LEVEL=DEBUG: Using key {b0a6b2fc-4ef3-4463-b575-cbe3985c3f8d} as the default key.
+2023-04-20 12:15:28.0679 - LEVEL=DEBUG: Key ring with default key {b0a6b2fc-4ef3-4463-b575-cbe3985c3f8d} was loaded during application startup.
+2023-04-20 12:15:28.1671 - LEVEL=DEBUG: Using development certificate: CN=localhost (Thumbprint: 28CD464C10EB97DA00656E6A6E1663AC67CD264E)
+2023-04-20 12:15:28.2277 - LEVEL=INFO: Now listening on: https://localhost:7042
+2023-04-20 12:15:28.2277 - LEVEL=INFO: Now listening on: http://localhost:8080
+2023-04-20 12:15:28.2277 - LEVEL=DEBUG: Loaded hosting startup assembly NetCore.Web
+2023-04-20 12:15:28.2277 - LEVEL=DEBUG: Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-04-20 12:15:28.2277 - LEVEL=DEBUG: Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2023-04-20 12:15:28.2277 - LEVEL=INFO: Application started. Press Ctrl+C to shut down.
+2023-04-20 12:15:28.2277 - LEVEL=INFO: Hosting environment: Development
+2023-04-20 12:15:28.2277 - LEVEL=INFO: Content root path: C:\Users\LJG\Desktop\ERP개발\Project\NetCore.Test\NetCore.Web\
+2023-04-20 12:15:28.2277 - LEVEL=DEBUG: Hosting started
+2023-04-20 12:15:28.6657 - LEVEL=DEBUG: Connection id "0HMQ19LV1A623" received FIN.
+2023-04-20 12:15:28.6657 - LEVEL=DEBUG: Connection id "0HMQ19LV1A622" received FIN.
+2023-04-20 12:15:28.6743 - LEVEL=DEBUG: Connection id "0HMQ19LV1A623" accepted.
+2023-04-20 12:15:28.6743 - LEVEL=DEBUG: Connection id "0HMQ19LV1A622" accepted.
+2023-04-20 12:15:28.6743 - LEVEL=DEBUG: Connection id "0HMQ19LV1A623" started.
+2023-04-20 12:15:28.6743 - LEVEL=DEBUG: Connection id "0HMQ19LV1A622" started.
+2023-04-20 12:15:28.6743 - LEVEL=DEBUG: Failed to authenticate HTTPS connection.
+2023-04-20 12:15:28.6743 - LEVEL=DEBUG: Failed to authenticate HTTPS connection.
+2023-04-20 12:15:28.6919 - LEVEL=DEBUG: Connection id "0HMQ19LV1A622" stopped.
+2023-04-20 12:15:28.6919 - LEVEL=DEBUG: Connection id "0HMQ19LV1A623" stopped.
+2023-04-20 12:15:28.6919 - LEVEL=DEBUG: Connection id "0HMQ19LV1A622" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-04-20 12:15:28.6919 - LEVEL=DEBUG: Connection id "0HMQ19LV1A623" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-04-20 12:15:28.7670 - LEVEL=DEBUG: Connection id "0HMQ19LV1A624" accepted.
+2023-04-20 12:15:28.7670 - LEVEL=DEBUG: Connection id "0HMQ19LV1A624" started.
+2023-04-20 12:15:28.8081 - LEVEL=DEBUG: Connection 0HMQ19LV1A624 established using the following protocol: Tls12
+2023-04-20 12:15:28.8474 - LEVEL=INFO: Request starting HTTP/2 GET https://localhost:7042/ - -
+2023-04-20 12:15:28.8706 - LEVEL=DEBUG: Wildcard detected, all requests with hosts will be allowed.
+2023-04-20 12:15:28.8706 - LEVEL=DEBUG: The request path / does not match a supported file type
+2023-04-20 12:15:28.8918 - LEVEL=DEBUG: 1 candidate(s) found for the request path '/'
+2023-04-20 12:15:28.8918 - LEVEL=DEBUG: Endpoint 'NetCore.Web.Controllers.EUserController.Login (NetCore.Web)' with route pattern '{controller=EUser}/{action=Login}/{id?}' is valid for the request path '/'
+2023-04-20 12:15:28.8918 - LEVEL=DEBUG: Request matched endpoint 'NetCore.Web.Controllers.EUserController.Login (NetCore.Web)'
+2023-04-20 12:15:28.9084 - LEVEL=DEBUG: AuthenticationScheme: Cookies was successfully authenticated.
+2023-04-20 12:15:28.9113 - LEVEL=INFO: Executing endpoint 'NetCore.Web.Controllers.EUserController.Login (NetCore.Web)'
+2023-04-20 12:15:28.9255 - LEVEL=INFO: Route matched with {action = "Login", controller = "EUser"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(System.String) on controller NetCore.Web.Controllers.EUserController (NetCore.Web).
+2023-04-20 12:15:28.9255 - LEVEL=DEBUG: Execution plan of authorization filters (in the following order): None
+2023-04-20 12:15:28.9255 - LEVEL=DEBUG: Execution plan of resource filters (in the following order): Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter
+2023-04-20 12:15:28.9255 - LEVEL=DEBUG: Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648), Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)
+2023-04-20 12:15:28.9255 - LEVEL=DEBUG: Execution plan of exception filters (in the following order): None
+2023-04-20 12:15:28.9255 - LEVEL=DEBUG: Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter
+2023-04-20 12:15:28.9255 - LEVEL=DEBUG: Executing controller factory for controller NetCore.Web.Controllers.EUserController (NetCore.Web)
+2023-04-20 12:15:28.9255 - LEVEL=DEBUG: Executed controller factory for controller NetCore.Web.Controllers.EUserController (NetCore.Web)
+2023-04-20 12:15:28.9255 - LEVEL=DEBUG: Attempting to bind parameter 'returnUrl' of type 'System.String' ...
+2023-04-20 12:15:28.9255 - LEVEL=DEBUG: Attempting to bind parameter 'returnUrl' of type 'System.String' using the name '' in request data ...
+2023-04-20 12:15:28.9255 - LEVEL=DEBUG: Could not find a value in the request with name '' for binding parameter 'returnUrl' of type 'System.String'.
+2023-04-20 12:15:28.9255 - LEVEL=DEBUG: Done attempting to bind parameter 'returnUrl' of type 'System.String'.
+2023-04-20 12:15:28.9255 - LEVEL=DEBUG: Done attempting to bind parameter 'returnUrl' of type 'System.String'.
+2023-04-20 12:15:28.9255 - LEVEL=DEBUG: Attempting to validate the bound parameter 'returnUrl' of type 'System.String' ...
+2023-04-20 12:15:28.9255 - LEVEL=DEBUG: Done attempting to validate the bound parameter 'returnUrl' of type 'System.String'.
+2023-04-20 12:15:28.9408 - LEVEL=DEBUG: View lookup cache miss for view 'Login' in controller 'EUser'.
+2023-04-20 12:15:28.9408 - LEVEL=INFO: Executing ViewResult, running view Login.
+2023-04-20 12:15:28.9408 - LEVEL=DEBUG: The view path '/Views/EUser/Login.cshtml' was found in 3.9615ms.
+2023-04-20 12:15:28.9763 - LEVEL=DEBUG: Found the endpoints NetCore.Web.Controllers.EUserController.LoginAsync (NetCore.Web), Route: {controller=EUser}/{action=Login}/{id?} for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2023-04-20 12:15:28.9763 - LEVEL=DEBUG: Successfully processed template EUser/Login for NetCore.Web.Controllers.EUserController.LoginAsync (NetCore.Web) resulting in /EUser/Login and 
+2023-04-20 12:15:28.9763 - LEVEL=DEBUG: Link generation succeeded for endpoints NetCore.Web.Controllers.EUserController.LoginAsync (NetCore.Web), Route: {controller=EUser}/{action=Login}/{id?} with result /EUser/Login
+2023-04-20 12:15:28.9763 - LEVEL=DEBUG: An antiforgery cookie token was reused.
+2023-04-20 12:15:28.9897 - LEVEL=DEBUG: The temp data cookie .AspNetCore.Mvc.CookieTempDataProvider was not found.
+2023-04-20 12:15:29.0058 - LEVEL=DEBUG: Found the endpoints Route: {controller=EUser}/{action=Login}/{id?} for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2023-04-20 12:15:29.0058 - LEVEL=DEBUG: Successfully processed template {controller=EUser}/{action=Login}/{id?} for Route: {controller=EUser}/{action=Login}/{id?} resulting in /EUser/Register and 
+2023-04-20 12:15:29.0058 - LEVEL=DEBUG: Link generation succeeded for endpoints Route: {controller=EUser}/{action=Login}/{id?} with result /EUser/Register
+2023-04-20 12:15:29.1171 - LEVEL=INFO: Executed ViewResult - view Login executed in 176.6486ms.
+2023-04-20 12:15:29.1171 - LEVEL=INFO: Executed action NetCore.Web.Controllers.EUserController.Login (NetCore.Web) in 197.1292ms
+2023-04-20 12:15:29.1171 - LEVEL=INFO: Executed endpoint 'NetCore.Web.Controllers.EUserController.Login (NetCore.Web)'
+2023-04-20 12:15:29.1396 - LEVEL=DEBUG: Response markup is scheduled to include browser refresh script injection.
+2023-04-20 12:15:29.1666 - LEVEL=DEBUG: Response markup was updated to include browser refresh script injection.
+2023-04-20 12:15:29.1759 - LEVEL=INFO: Request finished HTTP/2 GET https://localhost:7042/ - - - 200 - text/html;+charset=utf-8 329.4085ms
+2023-04-20 12:15:29.2068 - LEVEL=INFO: Request starting HTTP/2 GET https://localhost:7042/ExsisERP.styles.css - -
+2023-04-20 12:15:29.2068 - LEVEL=DEBUG: The request path /ExsisERP.styles.css does not match an existing file
+2023-04-20 12:15:29.2068 - LEVEL=DEBUG: No candidates found for the request path '/ExsisERP.styles.css'
+2023-04-20 12:15:29.2068 - LEVEL=DEBUG: Request did not match any endpoints
+2023-04-20 12:15:29.2068 - LEVEL=DEBUG: AuthenticationScheme: Cookies was successfully authenticated.
+2023-04-20 12:15:29.2068 - LEVEL=INFO: Request finished HTTP/2 GET https://localhost:7042/ExsisERP.styles.css - - - 404 0 - 4.9560ms
+2023-04-20 12:15:29.2306 - LEVEL=INFO: Request starting HTTP/2 GET https://localhost:7042/_framework/aspnetcore-browser-refresh.js - -
+2023-04-20 12:15:29.2306 - LEVEL=INFO: Request starting HTTP/2 GET https://localhost:7042/js/app.js - -
+2023-04-20 12:15:29.2306 - LEVEL=INFO: Request starting HTTP/2 GET https://localhost:7042/_vs/browserLink - -
+2023-04-20 12:15:29.2306 - LEVEL=DEBUG: The request path /js/app.js does not match an existing file
+2023-04-20 12:15:29.2306 - LEVEL=DEBUG: No candidates found for the request path '/js/app.js'
+2023-04-20 12:15:29.2306 - LEVEL=DEBUG: Request did not match any endpoints
+2023-04-20 12:15:29.2306 - LEVEL=DEBUG: AuthenticationScheme: Cookies was successfully authenticated.
+2023-04-20 12:15:29.2306 - LEVEL=INFO: Request finished HTTP/2 GET https://localhost:7042/js/app.js - - - 404 0 - 4.6053ms
+2023-04-20 12:15:29.2306 - LEVEL=INFO: Request finished HTTP/2 GET https://localhost:7042/_framework/aspnetcore-browser-refresh.js - - - 200 11992 application/javascript;+charset=utf-8 5.8482ms
+2023-04-20 12:15:29.2501 - LEVEL=INFO: Request finished HTTP/2 GET https://localhost:7042/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 19.0866ms
+2023-04-20 12:15:29.3236 - LEVEL=INFO: Request starting HTTP/2 GET https://localhost:7042/favicon.ico - -
+2023-04-20 12:15:29.3236 - LEVEL=INFO: The file /favicon.ico was not modified
+2023-04-20 12:15:29.3236 - LEVEL=DEBUG: Handled. Status code: 304 File: /favicon.ico
+2023-04-20 12:15:29.3236 - LEVEL=INFO: Request finished HTTP/2 GET https://localhost:7042/favicon.ico - - - 304 - image/x-icon 6.5013ms
+2023-04-20 12:15:32.9679 - LEVEL=INFO: Request starting HTTP/2 POST https://localhost:7042/EUser/Login application/x-www-form-urlencoded 315
+2023-04-20 12:15:32.9679 - LEVEL=DEBUG: POST requests are not supported
+2023-04-20 12:15:32.9679 - LEVEL=DEBUG: 1 candidate(s) found for the request path '/EUser/Login'
+2023-04-20 12:15:32.9679 - LEVEL=DEBUG: Endpoint 'NetCore.Web.Controllers.EUserController.LoginAsync (NetCore.Web)' with route pattern 'EUser/Login' is valid for the request path '/EUser/Login'
+2023-04-20 12:15:32.9679 - LEVEL=DEBUG: Request matched endpoint 'NetCore.Web.Controllers.EUserController.LoginAsync (NetCore.Web)'
+2023-04-20 12:15:32.9679 - LEVEL=DEBUG: AuthenticationScheme: Cookies was successfully authenticated.
+2023-04-20 12:15:32.9679 - LEVEL=INFO: Executing endpoint 'NetCore.Web.Controllers.EUserController.LoginAsync (NetCore.Web)'
+2023-04-20 12:15:32.9766 - LEVEL=INFO: Route matched with {action = "Login", controller = "EUser"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginAsync(NetCore.Data.ViewModels.LoginInfo, System.String) on controller NetCore.Web.Controllers.EUserController (NetCore.Web).
+2023-04-20 12:15:32.9766 - LEVEL=DEBUG: Execution plan of authorization filters (in the following order): Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.ValidateAntiforgeryTokenAuthorizationFilter
+2023-04-20 12:15:32.9766 - LEVEL=DEBUG: Execution plan of resource filters (in the following order): Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter
+2023-04-20 12:15:32.9766 - LEVEL=DEBUG: Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648), Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)
+2023-04-20 12:15:32.9766 - LEVEL=DEBUG: Execution plan of exception filters (in the following order): None
+2023-04-20 12:15:32.9766 - LEVEL=DEBUG: Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter
+2023-04-20 12:15:32.9766 - LEVEL=DEBUG: Connection id "0HMQ19LV1A624", Request id "0HMQ19LV1A624:0000000D": started reading request body.
+2023-04-20 12:15:32.9766 - LEVEL=DEBUG: Connection id "0HMQ19LV1A624", Request id "0HMQ19LV1A624:0000000D": done reading request body.
+2023-04-20 12:15:32.9766 - LEVEL=DEBUG: Antiforgery successfully validated a request.
+2023-04-20 12:15:32.9766 - LEVEL=DEBUG: Executing controller factory for controller NetCore.Web.Controllers.EUserController (NetCore.Web)
+2023-04-20 12:15:32.9766 - LEVEL=DEBUG: Executed controller factory for controller NetCore.Web.Controllers.EUserController (NetCore.Web)
+2023-04-20 12:15:32.9881 - LEVEL=DEBUG: Attempting to bind parameter 'login' of type 'NetCore.Data.ViewModels.LoginInfo' ...
+2023-04-20 12:15:32.9881 - LEVEL=DEBUG: Attempting to bind parameter 'login' of type 'NetCore.Data.ViewModels.LoginInfo' using the name '' in request data ...
+2023-04-20 12:15:32.9881 - LEVEL=DEBUG: Attempting to bind property 'NetCore.Data.ViewModels.LoginInfo.UserId' of type 'System.String' using the name 'UserId' in request data ...
+2023-04-20 12:15:32.9881 - LEVEL=DEBUG: Done attempting to bind property 'NetCore.Data.ViewModels.LoginInfo.UserId' of type 'System.String'.
+2023-04-20 12:15:32.9881 - LEVEL=DEBUG: Attempting to bind property 'NetCore.Data.ViewModels.LoginInfo.Password' of type 'System.String' using the name 'Password' in request data ...
+2023-04-20 12:15:32.9881 - LEVEL=DEBUG: Done attempting to bind property 'NetCore.Data.ViewModels.LoginInfo.Password' of type 'System.String'.
+2023-04-20 12:15:32.9881 - LEVEL=DEBUG: Attempting to bind property 'NetCore.Data.ViewModels.LoginInfo.RememberMe' of type 'System.Boolean' using the name 'RememberMe' in request data ...
+2023-04-20 12:15:32.9881 - LEVEL=DEBUG: Done attempting to bind property 'NetCore.Data.ViewModels.LoginInfo.RememberMe' of type 'System.Boolean'.
+2023-04-20 12:15:32.9881 - LEVEL=DEBUG: Done attempting to bind parameter 'login' of type 'NetCore.Data.ViewModels.LoginInfo'.
+2023-04-20 12:15:32.9881 - LEVEL=DEBUG: Done attempting to bind parameter 'login' of type 'NetCore.Data.ViewModels.LoginInfo'.
+2023-04-20 12:15:32.9881 - LEVEL=DEBUG: Attempting to validate the bound parameter 'login' of type 'NetCore.Data.ViewModels.LoginInfo' ...
+2023-04-20 12:15:32.9881 - LEVEL=DEBUG: Done attempting to validate the bound parameter 'login' of type 'NetCore.Data.ViewModels.LoginInfo'.
+2023-04-20 12:15:32.9881 - LEVEL=DEBUG: Attempting to bind parameter 'returnUrl' of type 'System.String' ...
+2023-04-20 12:15:32.9881 - LEVEL=DEBUG: Attempting to bind parameter 'returnUrl' of type 'System.String' using the name '' in request data ...
+2023-04-20 12:15:32.9881 - LEVEL=DEBUG: Could not find a value in the request with name '' for binding parameter 'returnUrl' of type 'System.String'.
+2023-04-20 12:15:32.9881 - LEVEL=DEBUG: Done attempting to bind parameter 'returnUrl' of type 'System.String'.
+2023-04-20 12:15:32.9881 - LEVEL=DEBUG: Done attempting to bind parameter 'returnUrl' of type 'System.String'.
+2023-04-20 12:15:32.9881 - LEVEL=DEBUG: Attempting to validate the bound parameter 'returnUrl' of type 'System.String' ...
+2023-04-20 12:15:32.9881 - LEVEL=DEBUG: Done attempting to validate the bound parameter 'returnUrl' of type 'System.String'.
+2023-04-20 12:15:33.0057 - LEVEL=INFO: Entity Framework Core 6.0.15 initialized 'DBFirstDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NetCore.Migrations 
+2023-04-20 12:15:33.0057 - LEVEL=DEBUG: Compiling query expression: 
+'DbSet<User>()
+    .Where(u => u.UserId.Equals(__login_UserId_0))
+    .FirstOrDefault()'
+2023-04-20 12:15:33.1003 - LEVEL=DEBUG: Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<User>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.UserId (string) Required PK AfterSave:Throw, 0], [Property: User.AccessFailedCount (int) Required, 1], [Property: User.GUIDSalt (string) Required, 2], [Property: User.IsMemberShipWithDrawn (bool?), 3], [Property: User.JoinedUtcDate (DateTime) Required, 4], [Property: User.PasswordHash (string) Required, 5], [Property: User.RNGSalt (string) Required, 6], [Property: User.UserEmail (string) Required, 7], [Property: User.UserName (string) Required, 8] }
+        SELECT TOP(1) u.UserId, u.AccessFailedCount, u.GUIDSalt, u.IsMemberShipWithDrawn, u.JoinedUtcDate, u.PasswordHash, u.RNGSalt, u.UserEmail, u.UserName
+        FROM User AS u
+        WHERE u.UserId == @__login_UserId_0), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, User>, 
+    NetCore.Services.Data.DBFirstDbContext, 
+    False, 
+    False, 
+    True
+)
+    .SingleOrDefault()'
+2023-04-20 12:15:33.1003 - LEVEL=DEBUG: Creating DbCommand for 'ExecuteReader'.
+2023-04-20 12:15:33.1003 - LEVEL=DEBUG: Created DbCommand for 'ExecuteReader' (0ms).
+2023-04-20 12:15:33.1142 - LEVEL=DEBUG: Opening connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:33.1142 - LEVEL=DEBUG: Opened connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:33.1142 - LEVEL=DEBUG: Executing DbCommand [Parameters=[@__login_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AccessFailedCount], [u].[GUIDSalt], [u].[IsMemberShipWithDrawn], [u].[JoinedUtcDate], [u].[PasswordHash], [u].[RNGSalt], [u].[UserEmail], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[UserId] = @__login_UserId_0
+2023-04-20 12:15:33.1449 - LEVEL=INFO: Executed DbCommand (30ms) [Parameters=[@__login_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AccessFailedCount], [u].[GUIDSalt], [u].[IsMemberShipWithDrawn], [u].[JoinedUtcDate], [u].[PasswordHash], [u].[RNGSalt], [u].[UserEmail], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[UserId] = @__login_UserId_0
+2023-04-20 12:15:33.1718 - LEVEL=DEBUG: Context 'DBFirstDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-20 12:15:33.1990 - LEVEL=DEBUG: A data reader was disposed.
+2023-04-20 12:15:33.1990 - LEVEL=DEBUG: Closing connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:33.1990 - LEVEL=DEBUG: Closed connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:33.2231 - LEVEL=DEBUG: Compiling query expression: 
+'DbSet<User>()
+    .Where(u => u.UserId.Equals(__userId_0))
+    .FirstOrDefault()'
+2023-04-20 12:15:33.2231 - LEVEL=DEBUG: Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<User>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.UserId (string) Required PK AfterSave:Throw, 0], [Property: User.AccessFailedCount (int) Required, 1], [Property: User.GUIDSalt (string) Required, 2], [Property: User.IsMemberShipWithDrawn (bool?), 3], [Property: User.JoinedUtcDate (DateTime) Required, 4], [Property: User.PasswordHash (string) Required, 5], [Property: User.RNGSalt (string) Required, 6], [Property: User.UserEmail (string) Required, 7], [Property: User.UserName (string) Required, 8] }
+        SELECT TOP(1) u.UserId, u.AccessFailedCount, u.GUIDSalt, u.IsMemberShipWithDrawn, u.JoinedUtcDate, u.PasswordHash, u.RNGSalt, u.UserEmail, u.UserName
+        FROM User AS u
+        WHERE u.UserId == @__userId_0), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, User>, 
+    NetCore.Services.Data.DBFirstDbContext, 
+    False, 
+    False, 
+    True
+)
+    .SingleOrDefault()'
+2023-04-20 12:15:33.2231 - LEVEL=DEBUG: Creating DbCommand for 'ExecuteReader'.
+2023-04-20 12:15:33.2231 - LEVEL=DEBUG: Created DbCommand for 'ExecuteReader' (0ms).
+2023-04-20 12:15:33.2231 - LEVEL=DEBUG: Opening connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:33.2231 - LEVEL=DEBUG: Opened connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:33.2231 - LEVEL=DEBUG: Executing DbCommand [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AccessFailedCount], [u].[GUIDSalt], [u].[IsMemberShipWithDrawn], [u].[JoinedUtcDate], [u].[PasswordHash], [u].[RNGSalt], [u].[UserEmail], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[UserId] = @__userId_0
+2023-04-20 12:15:33.2231 - LEVEL=INFO: Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AccessFailedCount], [u].[GUIDSalt], [u].[IsMemberShipWithDrawn], [u].[JoinedUtcDate], [u].[PasswordHash], [u].[RNGSalt], [u].[UserEmail], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[UserId] = @__userId_0
+2023-04-20 12:15:33.2231 - LEVEL=DEBUG: A data reader was disposed.
+2023-04-20 12:15:33.2231 - LEVEL=DEBUG: Closing connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:33.2231 - LEVEL=DEBUG: Closed connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:33.2231 - LEVEL=DEBUG: Compiling query expression: 
+'DbSet<UserRolesByUser>()
+    .Where(uru => uru.UserId.Equals(__userId_0))'
+2023-04-20 12:15:33.2231 - LEVEL=DEBUG: Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<UserRolesByUser>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: UserRolesByUser.UserId (string) Required PK FK AfterSave:Throw, 0], [Property: UserRolesByUser.RoleId (string) Required PK FK Index AfterSave:Throw, 1], [Property: UserRolesByUser.OwnedUtcDate (DateTime) Required, 2] }
+        SELECT u.UserId, u.RoleId, u.OwnedUtcDate
+        FROM UserRolesByUser AS u
+        WHERE u.UserId == @__userId_0), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, UserRolesByUser>, 
+    NetCore.Services.Data.DBFirstDbContext, 
+    False, 
+    False, 
+    True
+)'
+2023-04-20 12:15:33.2231 - LEVEL=DEBUG: Creating DbCommand for 'ExecuteReader'.
+2023-04-20 12:15:33.2231 - LEVEL=DEBUG: Created DbCommand for 'ExecuteReader' (0ms).
+2023-04-20 12:15:33.2231 - LEVEL=DEBUG: Opening connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:33.2231 - LEVEL=DEBUG: Opened connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:33.2369 - LEVEL=DEBUG: Executing DbCommand [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [u].[UserId], [u].[RoleId], [u].[OwnedUtcDate]
+FROM [UserRolesByUser] AS [u]
+WHERE [u].[UserId] = @__userId_0
+2023-04-20 12:15:33.2369 - LEVEL=INFO: Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [u].[UserId], [u].[RoleId], [u].[OwnedUtcDate]
+FROM [UserRolesByUser] AS [u]
+WHERE [u].[UserId] = @__userId_0
+2023-04-20 12:15:33.2369 - LEVEL=DEBUG: Context 'DBFirstDbContext' started tracking 'UserRolesByUser' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-20 12:15:33.2640 - LEVEL=DEBUG: A data reader was disposed.
+2023-04-20 12:15:33.2640 - LEVEL=DEBUG: Closing connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:33.2640 - LEVEL=DEBUG: Closed connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:33.2640 - LEVEL=DEBUG: Compiling query expression: 
+'DbSet<UserRole>()
+    .Where(ur => ur.RoleId.Equals(__roleId_0))
+    .FirstOrDefault()'
+2023-04-20 12:15:33.2682 - LEVEL=DEBUG: Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<UserRole>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: UserRole.RoleId (string) Required PK AfterSave:Throw, 0], [Property: UserRole.ModifiedUtcDate (DateTime) Required, 1], [Property: UserRole.RoleName (string) Required, 2], [Property: UserRole.RolePriority (byte) Required, 3] }
+        SELECT TOP(1) u.RoleId, u.ModifiedUtcDate, u.RoleName, u.RolePriority
+        FROM UserRole AS u
+        WHERE u.RoleId == @__roleId_0), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, UserRole>, 
+    NetCore.Services.Data.DBFirstDbContext, 
+    False, 
+    False, 
+    True
+)
+    .SingleOrDefault()'
+2023-04-20 12:15:33.2682 - LEVEL=DEBUG: Creating DbCommand for 'ExecuteReader'.
+2023-04-20 12:15:33.2682 - LEVEL=DEBUG: Created DbCommand for 'ExecuteReader' (0ms).
+2023-04-20 12:15:33.2682 - LEVEL=DEBUG: Opening connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:33.2682 - LEVEL=DEBUG: Opened connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:33.2682 - LEVEL=DEBUG: Executing DbCommand [Parameters=[@__roleId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[RoleId], [u].[ModifiedUtcDate], [u].[RoleName], [u].[RolePriority]
+FROM [UserRole] AS [u]
+WHERE [u].[RoleId] = @__roleId_0
+2023-04-20 12:15:33.2682 - LEVEL=INFO: Executed DbCommand (2ms) [Parameters=[@__roleId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[RoleId], [u].[ModifiedUtcDate], [u].[RoleName], [u].[RolePriority]
+FROM [UserRole] AS [u]
+WHERE [u].[RoleId] = @__roleId_0
+2023-04-20 12:15:33.2682 - LEVEL=DEBUG: Context 'DBFirstDbContext' started tracking 'UserRole' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-20 12:15:33.2682 - LEVEL=DEBUG: A data reader was disposed.
+2023-04-20 12:15:33.2839 - LEVEL=DEBUG: Closing connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:33.2839 - LEVEL=DEBUG: Closed connection to database 'DBFirstDB' on server '(localdb)\MSSQLLocalDB'.
+2023-04-20 12:15:33.2839 - LEVEL=INFO: AuthenticationScheme: Cookies signed in.
+2023-04-20 12:15:33.2839 - LEVEL=DEBUG: The temp data cookie .AspNetCore.Mvc.CookieTempDataProvider was not found.
+2023-04-20 12:15:33.2839 - LEVEL=DEBUG: Found the endpoints Route: {controller=EUser}/{action=Login}/{id?} for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2023-04-20 12:15:33.2839 - LEVEL=DEBUG: Successfully processed template {controller=EUser}/{action=Login}/{id?} for Route: {controller=EUser}/{action=Login}/{id?} resulting in /EUser/Index and 
+2023-04-20 12:15:33.2839 - LEVEL=DEBUG: Link generation succeeded for endpoints Route: {controller=EUser}/{action=Login}/{id?} with result /EUser/Index
+2023-04-20 12:15:33.2839 - LEVEL=INFO: Executing RedirectResult, redirecting to /EUser/Index.
+2023-04-20 12:15:33.2839 - LEVEL=INFO: Executed action NetCore.Web.Controllers.EUserController.LoginAsync (NetCore.Web) in 310.7557ms
+2023-04-20 12:15:33.2839 - LEVEL=INFO: Executed endpoint 'NetCore.Web.Controllers.EUserController.LoginAsync (NetCore.Web)'
+2023-04-20 12:15:33.2839 - LEVEL=DEBUG: 'DBFirstDbContext' disposed.
+2023-04-20 12:15:33.2839 - LEVEL=INFO: Request starting HTTP/2 GET https://localhost:7042/EUser/Index - -
+2023-04-20 12:15:33.2839 - LEVEL=INFO: Request finished HTTP/2 POST https://localhost:7042/EUser/Login application/x-www-form-urlencoded 315 - 302 0 - 325.0038ms
+2023-04-20 12:15:33.2839 - LEVEL=DEBUG: The request path /EUser/Index does not match a supported file type
+2023-04-20 12:15:33.2839 - LEVEL=DEBUG: 1 candidate(s) found for the request path '/EUser/Index'
+2023-04-20 12:15:33.2839 - LEVEL=DEBUG: Endpoint 'NetCore.Web.Controllers.EUserController.Index (NetCore.Web)' with route pattern '{controller=EUser}/{action=Login}/{id?}' is valid for the request path '/EUser/Index'
+2023-04-20 12:15:33.2839 - LEVEL=DEBUG: Request matched endpoint 'NetCore.Web.Controllers.EUserController.Index (NetCore.Web)'
+2023-04-20 12:15:33.2839 - LEVEL=DEBUG: AuthenticationScheme: Cookies was successfully authenticated.
+2023-04-20 12:15:33.2839 - LEVEL=DEBUG: Authorization was successful.
+2023-04-20 12:15:33.2839 - LEVEL=INFO: Executing endpoint 'NetCore.Web.Controllers.EUserController.Index (NetCore.Web)'
+2023-04-20 12:15:33.2839 - LEVEL=INFO: Route matched with {action = "Index", controller = "EUser"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller NetCore.Web.Controllers.EUserController (NetCore.Web).
+2023-04-20 12:15:33.2839 - LEVEL=DEBUG: Execution plan of authorization filters (in the following order): None
+2023-04-20 12:15:33.2839 - LEVEL=DEBUG: Execution plan of resource filters (in the following order): Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter
+2023-04-20 12:15:33.2999 - LEVEL=DEBUG: Execution plan of action filters (in the following order): Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648), Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)
+2023-04-20 12:15:33.2999 - LEVEL=DEBUG: Execution plan of exception filters (in the following order): None
+2023-04-20 12:15:33.2999 - LEVEL=DEBUG: Execution plan of result filters (in the following order): Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter
+2023-04-20 12:15:33.2999 - LEVEL=DEBUG: Executing controller factory for controller NetCore.Web.Controllers.EUserController (NetCore.Web)
+2023-04-20 12:15:33.2999 - LEVEL=DEBUG: Executed controller factory for controller NetCore.Web.Controllers.EUserController (NetCore.Web)
+2023-04-20 12:15:33.2999 - LEVEL=DEBUG: View lookup cache miss for view 'Index' in controller 'EUser'.
+2023-04-20 12:15:33.2999 - LEVEL=INFO: Executing ViewResult, running view Index.
+2023-04-20 12:15:33.2999 - LEVEL=DEBUG: The view path '/Views/EUser/Index.cshtml' was found in 0.7383ms.
+2023-04-20 12:15:33.2999 - LEVEL=DEBUG: The temp data cookie .AspNetCore.Mvc.CookieTempDataProvider was used to successfully load temp data.
+2023-04-20 12:15:33.2999 - LEVEL=DEBUG: Found the endpoints NetCore.Web.Controllers.EUserController.LogOutAsync (NetCore.Web), Route: {controller=EUser}/{action=Login}/{id?} for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2023-04-20 12:15:33.2999 - LEVEL=DEBUG: Successfully processed template EUser/LogOut for NetCore.Web.Controllers.EUserController.LogOutAsync (NetCore.Web) resulting in /EUser/LogOut and 
+2023-04-20 12:15:33.2999 - LEVEL=DEBUG: Link generation succeeded for endpoints NetCore.Web.Controllers.EUserController.LogOutAsync (NetCore.Web), Route: {controller=EUser}/{action=Login}/{id?} with result /EUser/LogOut
+2023-04-20 12:15:33.2999 - LEVEL=DEBUG: Found the endpoints NetCore.Web.Controllers.EUserController.WithDrawnAsync (NetCore.Web), Route: {controller=EUser}/{action=Login}/{id?} for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2023-04-20 12:15:33.2999 - LEVEL=DEBUG: Successfully processed template EUser/Withdrawn for NetCore.Web.Controllers.EUserController.WithDrawnAsync (NetCore.Web) resulting in /EUser/Withdrawn and 
+2023-04-20 12:15:33.2999 - LEVEL=DEBUG: Link generation succeeded for endpoints NetCore.Web.Controllers.EUserController.WithDrawnAsync (NetCore.Web), Route: {controller=EUser}/{action=Login}/{id?} with result /EUser/Withdrawn
+2023-04-20 12:15:33.2999 - LEVEL=DEBUG: An antiforgery cookie token was reused.
+2023-04-20 12:15:33.3174 - LEVEL=DEBUG: Found the endpoints Route: {controller=EUser}/{action=Login}/{id?} for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2023-04-20 12:15:33.3174 - LEVEL=DEBUG: Successfully processed template {controller=EUser}/{action=Login}/{id?} for Route: {controller=EUser}/{action=Login}/{id?} resulting in /Home/Index and 
+2023-04-20 12:15:33.3174 - LEVEL=DEBUG: Link generation succeeded for endpoints Route: {controller=EUser}/{action=Login}/{id?} with result /Home/Index
+2023-04-20 12:15:33.3174 - LEVEL=DEBUG: Found the endpoints Route: {controller=EUser}/{action=Login}/{id?} for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2023-04-20 12:15:33.3174 - LEVEL=DEBUG: Successfully processed template {controller=EUser}/{action=Login}/{id?} for Route: {controller=EUser}/{action=Login}/{id?} resulting in /Home/Index and 
+2023-04-20 12:15:33.3174 - LEVEL=DEBUG: Link generation succeeded for endpoints Route: {controller=EUser}/{action=Login}/{id?} with result /Home/Index
+2023-04-20 12:15:33.3174 - LEVEL=DEBUG: Found the endpoints Route: {controller=EUser}/{action=Login}/{id?} for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2023-04-20 12:15:33.3174 - LEVEL=DEBUG: Successfully processed template {controller=EUser}/{action=Login}/{id?} for Route: {controller=EUser}/{action=Login}/{id?} resulting in /EUser/UpdateInfo and 
+2023-04-20 12:15:33.3174 - LEVEL=DEBUG: Link generation succeeded for endpoints Route: {controller=EUser}/{action=Login}/{id?} with result /EUser/UpdateInfo
+2023-04-20 12:15:33.3174 - LEVEL=DEBUG: Found the endpoints Route: {controller=EUser}/{action=Login}/{id?} for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2023-04-20 12:15:33.3174 - LEVEL=DEBUG: Successfully processed template {controller=EUser}/{action=Login}/{id?} for Route: {controller=EUser}/{action=Login}/{id?} resulting in /Data/AES and 
+2023-04-20 12:15:33.3174 - LEVEL=DEBUG: Link generation succeeded for endpoints Route: {controller=EUser}/{action=Login}/{id?} with result /Data/AES
+2023-04-20 12:15:33.3174 - LEVEL=DEBUG: Found the endpoints NetCore.Web.Controllers.EUserController.LogOutAsync (NetCore.Web), Route: {controller=EUser}/{action=Login}/{id?} for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2023-04-20 12:15:33.3174 - LEVEL=DEBUG: Successfully processed template EUser/LogOut for NetCore.Web.Controllers.EUserController.LogOutAsync (NetCore.Web) resulting in /EUser/LogOut and 
+2023-04-20 12:15:33.3174 - LEVEL=DEBUG: Link generation succeeded for endpoints NetCore.Web.Controllers.EUserController.LogOutAsync (NetCore.Web), Route: {controller=EUser}/{action=Login}/{id?} with result /EUser/LogOut
+2023-04-20 12:15:33.3174 - LEVEL=DEBUG: Found the endpoints Route: {controller=EUser}/{action=Login}/{id?} for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2023-04-20 12:15:33.3174 - LEVEL=DEBUG: Successfully processed template {controller=EUser}/{action=Login}/{id?} for Route: {controller=EUser}/{action=Login}/{id?} resulting in /Home/Privacy and 
+2023-04-20 12:15:33.3174 - LEVEL=DEBUG: Link generation succeeded for endpoints Route: {controller=EUser}/{action=Login}/{id?} with result /Home/Privacy
+2023-04-20 12:15:33.3174 - LEVEL=INFO: Executed ViewResult - view Index executed in 25.1796ms.
+2023-04-20 12:15:33.3174 - LEVEL=INFO: Executed action NetCore.Web.Controllers.EUserController.Index (NetCore.Web) in 27.4912ms
+2023-04-20 12:15:33.3174 - LEVEL=INFO: Executed endpoint 'NetCore.Web.Controllers.EUserController.Index (NetCore.Web)'
+2023-04-20 12:15:33.3174 - LEVEL=DEBUG: Response markup is scheduled to include browser refresh script injection.
+2023-04-20 12:15:33.3174 - LEVEL=DEBUG: Response markup was updated to include browser refresh script injection.
+2023-04-20 12:15:33.3174 - LEVEL=INFO: Request finished HTTP/2 GET https://localhost:7042/EUser/Index - - - 200 - text/html;+charset=utf-8 37.9388ms
+2023-04-20 12:15:33.3481 - LEVEL=INFO: Request starting HTTP/2 GET https://localhost:7042/_framework/aspnetcore-browser-refresh.js - -
+2023-04-20 12:15:33.3481 - LEVEL=INFO: Request starting HTTP/2 GET https://localhost:7042/ExsisERP.styles.css - -
+2023-04-20 12:15:33.3481 - LEVEL=INFO: Request finished HTTP/2 GET https://localhost:7042/_framework/aspnetcore-browser-refresh.js - - - 200 11992 application/javascript;+charset=utf-8 0.6228ms
+2023-04-20 12:15:33.3481 - LEVEL=DEBUG: The request path /ExsisERP.styles.css does not match an existing file
+2023-04-20 12:15:33.3481 - LEVEL=DEBUG: No candidates found for the request path '/ExsisERP.styles.css'
+2023-04-20 12:15:33.3481 - LEVEL=DEBUG: Request did not match any endpoints
+2023-04-20 12:15:33.3481 - LEVEL=DEBUG: AuthenticationScheme: Cookies was successfully authenticated.
+2023-04-20 12:15:33.3481 - LEVEL=INFO: Request finished HTTP/2 GET https://localhost:7042/ExsisERP.styles.css - - - 404 0 - 2.5530ms
+2023-04-20 12:15:33.3481 - LEVEL=INFO: Request starting HTTP/2 GET https://localhost:7042/_vs/browserLink - -
+2023-04-20 12:15:33.3631 - LEVEL=INFO: Request finished HTTP/2 GET https://localhost:7042/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 7.8525ms

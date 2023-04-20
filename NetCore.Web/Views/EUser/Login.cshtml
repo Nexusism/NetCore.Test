@@ -20,6 +20,7 @@
 
                     <form method="post" asp-route-returnurl="@ViewData["ReturnUrl"]" asp-controller="EUser" asp-action="Login" onsubmit="btnLogin.disabled = true; return true;" style="width: 23rem;">
                         <div class="text-info">@Html.Raw(TempData["Message"])</div>
+                        <div class="text-danger">@Html.Raw(ViewData["Message"])</div>
                         <h2 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Exsis Project</h2>
                         <div class="text-danger" asp-validation-summary="All"></div>
 

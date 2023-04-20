@@ -37,21 +37,31 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
+@*                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="EUser" asp-action="Index">멤버십</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="EUser" asp-action="Register">사용자 등록</a>
-                        </li>
-@*                        @if (Context.User.Identity.IsAuthenticated)
+                        </li>*@
+                        @if (Context.User.IsInRole("SystemUser"))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="EUser" asp-action="login">멤버십 로그인</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="EUser" asp-action="Register">사용자 등록</a>
                             </li>
-                        }*@
+                        }
+                        
+                        @if (Context.User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="EUser" asp-action="UpdateInfo">사용자 정보수정</a>
+                            </li>
+@*                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="EUser" asp-action="UpdateInfo">사용자 탈퇴</a>
+                            </li>*@
+                        }
                         
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Data" asp-action="AES">AES 암호 생성기</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Data" asp-action="Cart">장바구니세션테스트</a>
                         </li>
                         <li class="nav-item" style="display:flex;align-items:center">
                             @if (Context.User.Identity.IsAuthenticated){

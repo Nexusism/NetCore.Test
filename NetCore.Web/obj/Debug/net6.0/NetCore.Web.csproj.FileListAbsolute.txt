@@ -1064,3 +1064,7 @@ C:\Users\LJG\Desktop\ERP개발\Project\NetCore.Test\NetCore.Web\obj\Debug\net6.0
 C:\Users\LJG\Desktop\ERP개발\Project\NetCore.Test\NetCore.Web\obj\Debug\net6.0\NetCore.Web.pdb
 C:\Users\LJG\Desktop\ERP개발\Project\NetCore.Test\NetCore.Web\obj\Debug\net6.0\NetCore.Web.genruntimeconfig.cache
 C:\Users\LJG\Desktop\ERP개발\Project\NetCore.Test\NetCore.Web\obj\Debug\net6.0\ref\NetCore.Web.dll
+C:\Users\LJG\Desktop\ERP개발\Project\NetCore.Test\NetCore.Web\bin\Debug\net6.0\NLog.config
+C:\Users\LJG\Desktop\ERP개발\Project\NetCore.Test\NetCore.Web\bin\Debug\net6.0\NLog.dll
+C:\Users\LJG\Desktop\ERP개발\Project\NetCore.Test\NetCore.Web\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+C:\Users\LJG\Desktop\ERP개발\Project\NetCore.Test\NetCore.Web\bin\Debug\net6.0\NLog.Web.AspNetCore.dll

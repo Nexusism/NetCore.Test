@@ -10,3 +10,15 @@ C:\Users\LJG\Desktop\ERP개발\Project\NetCoreTest\NetCore.Databases\obj\Debug\n
 C:\Users\LJG\Desktop\ERP개발\Project\NetCoreTest\NetCore.Databases\obj\Debug\net6.0\refint\NetCore.Databases.dll
 C:\Users\LJG\Desktop\ERP개발\Project\NetCoreTest\NetCore.Databases\obj\Debug\net6.0\NetCore.Databases.pdb
 C:\Users\LJG\Desktop\ERP개발\Project\NetCoreTest\NetCore.Databases\obj\Debug\net6.0\ref\NetCore.Databases.dll
+C:\Users\LJG\Desktop\ERP개발\Project\NetCore.Test\NetCore.Databases\bin\Debug\net6.0\NetCore.Databases.deps.json
+C:\Users\LJG\Desktop\ERP개발\Project\NetCore.Test\NetCore.Databases\bin\Debug\net6.0\NetCore.Databases.dll
+C:\Users\LJG\Desktop\ERP개발\Project\NetCore.Test\NetCore.Databases\bin\Debug\net6.0\NetCore.Databases.pdb
+C:\Users\LJG\Desktop\ERP개발\Project\NetCore.Test\NetCore.Databases\obj\Debug\net6.0\NetCore.Databases.csproj.AssemblyReference.cache
+C:\Users\LJG\Desktop\ERP개발\Project\NetCore.Test\NetCore.Databases\obj\Debug\net6.0\NetCore.Databases.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LJG\Desktop\ERP개발\Project\NetCore.Test\NetCore.Databases\obj\Debug\net6.0\NetCore.Databases.AssemblyInfoInputs.cache
+C:\Users\LJG\Desktop\ERP개발\Project\NetCore.Test\NetCore.Databases\obj\Debug\net6.0\NetCore.Databases.AssemblyInfo.cs
+C:\Users\LJG\Desktop\ERP개발\Project\NetCore.Test\NetCore.Databases\obj\Debug\net6.0\NetCore.Databases.csproj.CoreCompileInputs.cache
+C:\Users\LJG\Desktop\ERP개발\Project\NetCore.Test\NetCore.Databases\obj\Debug\net6.0\NetCore.Databases.dll
+C:\Users\LJG\Desktop\ERP개발\Project\NetCore.Test\NetCore.Databases\obj\Debug\net6.0\refint\NetCore.Databases.dll
+C:\Users\LJG\Desktop\ERP개발\Project\NetCore.Test\NetCore.Databases\obj\Debug\net6.0\NetCore.Databases.pdb
+C:\Users\LJG\Desktop\ERP개발\Project\NetCore.Test\NetCore.Databases\obj\Debug\net6.0\ref\NetCore.Databases.dll

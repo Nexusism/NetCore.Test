@@ -12,19 +12,25 @@ using System.Security.Claims;
 
 namespace NetCore.Web.Controllers
 {
+    
+
     [Authorize(Roles = "AssociateUser, GeneralUser ,SuperUser, SystemUser")]
     public class EUserController : Controller
     {
+
         // 의존성 주입 - 생성자 주입(닷넷코어 기본제공)
+        private readonly ILogger<EUserController> _logger;
         private IUser _user;
         private IPasswordHasher _hasher;
         private HttpContext _context;
 
-        public EUserController(IHttpContextAccessor accessor, IPasswordHasher hasher, IUser user)
+        public EUserController(IHttpContextAccessor accessor, IPasswordHasher hasher, IUser user, ILogger<EUserController> logger)
         {
             _context = accessor.HttpContext;
             _hasher = hasher;
             _user = user;
+            _logger = logger;
+            _logger.LogDebug(1, "NLog injected into EUserController");
         }
 
         #region private methods
@@ -54,6 +60,7 @@ namespace NetCore.Web.Controllers
         [AllowAnonymous]
         public IActionResult Login(string? returnUrl = null)
         {
+            _logger.LogInformation("로그인화면 진입");
             ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
@@ -73,7 +80,7 @@ namespace NetCore.Web.Controllers
         public async Task<IActionResult> LoginAsync(LoginInfo login, string? returnUrl)
         {
             ViewData["ReturnUrl"] = returnUrl;
-            Console.WriteLine("LoginAsync 진입");
+            //Console.WriteLine("LoginAsync 진입");
             string message = string.Empty;
             if (ModelState.IsValid)
             {
@@ -168,6 +175,79 @@ namespace NetCore.Web.Controllers
 
             ModelState.AddModelError(string.Empty, message);
             return View(register);
+        }
+        [HttpGet]
+        public IActionResult UpdateInfo()
+        {
+            UserInfo user = _user.GetUserInfoForUpdate(_context.User.Identity.Name); // 서비스
+            return View(user);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult UpdateInfo(UserInfo user)
+        {
+            Console.WriteLine("userName = " + user.UserName);
+            Console.WriteLine("userId = " + user.UserId);
+            string message = string.Empty;
+            if (ModelState.IsValid)
+            {
+                // 변경대상 값 비교 서비스
+                if (_user.CompareInfo(user))
+                {
+                    message = "변경내용이 없습니다.";
+                    ModelState.AddModelError(string.Empty, message);
+                    return View(user);
+                }
+
+                // 정보 수정 서비스
+                if (_user.UpdateUser(user) > 0)
+                {
+                    TempData["Message"] = "수정되었습니다.";
+                    return RedirectToAction("UpdateInfo", "EUser");
+                }
+                else
+                {
+                    message = "사용자 정보가 일치하지 않습니다.";
+                }
+            }
+            else
+            {
+                message = "변경사항이 없습니다.";
+            }
+
+            ModelState.AddModelError(string.Empty, message);
+            return View(user);
+        }
+
+        [HttpPost("/EUser/Withdrawn")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> WithDrawnAsync(WithdrawnInfo withdrawn) {
+
+            string message = string.Empty;
+            if(ModelState.IsValid)
+            {
+                // 탈퇴 서비스
+                if(_user.WithdrawnUser(withdrawn) > 0)
+                {
+                    TempData["Message"] = "사용자 탈퇴가 완료되었습니다.";
+
+                    await _context.SignOutAsync(scheme:CookieAuthenticationDefaults.AuthenticationScheme);
+
+                    return RedirectToAction("Login", "EUser");
+                }
+                else
+                {
+                    message = "사용자 탈퇴에 실패하였습니다. 비밀번호를 확인하세요.";
+                }
+
+            }
+            else
+            {
+                message = "사용자 탈퇴에 실패하였습니다. 비밀번호를 확인하세요.";
+            }
+            ViewData["Message"] = message;
+            return View("Index", withdrawn);
         }
 
         [HttpGet("/EUser/LogOut")]
